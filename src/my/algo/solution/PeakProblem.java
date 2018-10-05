@@ -28,3 +28,20 @@ public class PeakProblem {
         return array;
     }
 }
+
+public static int oneDPeakSimpleAlgo(int arr[]) {
+        for (int i = 1; i < arr.length - 2; i++) {
+            if (arr[i] >= arr[i - 1] && arr[i] >= arr[i + 1]) {
+                System.out.println("index : " + i);
+                return arr[i];
+            }
+        }
+        if (arr[0] > arr[1]) {
+            return arr[0];
+        }
+        if (arr[arr.length - 1] > arr[arr.length - 2]) {
+            return arr[arr.length - 1];
+        }
+
+        return 0;
+    }
