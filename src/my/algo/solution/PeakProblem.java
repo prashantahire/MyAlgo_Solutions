@@ -7,6 +7,29 @@ import java.util.Random;
 
 
 public class PeakProblem {
+    static int recCnt = 1;
+
+    public static void main(String args[]) {
+        int arrSize = 10;
+        int[] array = getArray(arrSize);
+        long startTimeSimple = System.currentTimeMillis();
+        System.out.println(
+                    "One dimanesion peak oneDPeakSimpleAlgo:" + oneDPeakSimpleAlgo(array) + " Time taken :" + (System.currentTimeMillis() - startTimeSimple));
+
+        long startTimeRec = System.currentTimeMillis();
+        System.out.println("One dimanesion peak oneDPeakRecAlgo:" + oneDPeakRecAlgo(array, (arrSize / 2) - 1) + " Time taken :" +
+                    (System.currentTimeMillis() - startTimeRec));
+
+        int arr2[][] = get2DArray(50, 20);
+        long startTime2DSimple = System.currentTimeMillis();
+        System.out.println("Two dimanesion peak twoDPeakSimpleAlgo:" + twoDPeakSimpleAlgo(arr2, 20) + " Time taken :" +
+                    (System.currentTimeMillis() - startTime2DSimple));
+
+        long startTime2DImproved = System.currentTimeMillis();
+        System.out.println("Two dimanesion peak twoDPeakImprovedAlgo:" + twoDPeakImprovedAlgo(arr2, 10) + " Time taken :" +
+                    (System.currentTimeMillis() - startTime2DImproved));
+
+    }
 
     public static int oneDPeakSimpleAlgo(int arr[]) {
         for (int i = 1; i < arr.length - 2; i++) {
@@ -57,6 +80,34 @@ public class PeakProblem {
         return 0;
     }
 
+    public static int twoDPeakImprovedAlgo(int arr[][], int column) {
+        int maxRowNum = getMaxRowNumForColumn(arr, column);
+        if (maxRowNum <= 0 || (maxRowNum - 1) >= arr.length) {
+            return arr[maxRowNum][column];
+        }
+        if (arr[maxRowNum - 1][column] > arr[maxRowNum][column]) {
+            return twoDPeakImprovedAlgo(arr, column / 2);
+        }
+        else if (arr[maxRowNum + 1][column] > arr[maxRowNum][column]) {
+            return twoDPeakImprovedAlgo(arr, column / 2);
+        }
+        else {
+            return arr[maxRowNum][column];
+        }
+    }
+
+    public static int getMaxRowNumForColumn(int arr[][], int column) {
+        int max = 0;
+        int rowNum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i][column] > max) {
+                max = arr[i][column];
+                rowNum = i;
+            }
+        }
+        return rowNum;
+    }
+
     public static int[] getArray(int size) {
         Random random = new Random();
         int[] array = new int[size];
@@ -87,5 +138,6 @@ public class PeakProblem {
         System.out.println("=============================================");
         return array;
     }
+
 
 }
