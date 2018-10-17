@@ -2,6 +2,11 @@ package my.algo.solution;
 
 public class InsertionSort {
     
+    public static void main(String ...args) {
+        InsertionSort sort = new InsertionSort();
+        int array[] = sort.getArray(10);
+        sort.insertionSort(array);        
+    }
     public void insertionSort(int array[]) {
 
         for (int i = 1; i < array.length; i++) {
