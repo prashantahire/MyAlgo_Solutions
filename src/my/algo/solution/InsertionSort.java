@@ -1,5 +1,7 @@
 package my.algo.solution;
 
+import java.util.Random;
+
 public class InsertionSort {
     
     public static void main(String ...args) {
@@ -24,5 +26,22 @@ public class InsertionSort {
         }
         System.out.println("Insertion Sort output: ");
         printArray(array);
+    }
+    public int[] getArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(size);
+        }
+        printArray(array);
+        return array;
+    }
+    
+    public void printArray(int array[]) {
+        for (int e : array) {
+            System.out.print(e + ",");
+        }
+        System.out.println("");
+        System.out.println("=============");
     }
 }
