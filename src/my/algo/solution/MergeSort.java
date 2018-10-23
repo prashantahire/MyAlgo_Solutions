@@ -1,10 +1,30 @@
+
+
 package my.algo.solution;
 
+
 public class MergeSort {
-    
+
     /**
-     * Merge function to merge two sorted arrays 
-     * Time complexity O(n)
+     * Merge sort divide and conquer plus two merge array method. Time complexity: O(nlogn)
+     * 
+     * @param array
+     * @param startIndex
+     * @param endIndex
+     */
+    public void mergeSort(int array[], int startIndex, int endIndex) {
+
+        if (startIndex < endIndex) {
+
+            int midIdx = (startIndex + endIndex) / 2;
+            mergeSort(array, startIndex, midIdx);
+            mergeSort(array, midIdx + 1, endIndex);
+            mergeArray(array, startIndex, midIdx, endIndex);
+        }
+    }
+
+    /**
+     * Merge function to merge two sorted arrays Time complexity O(n)
      * 
      * @param array
      * @param startIndex
