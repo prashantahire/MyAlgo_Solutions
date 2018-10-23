@@ -3,6 +3,9 @@
 package my.algo.solution;
 
 
+import java.util.Random;
+
+
 public class MergeSort {
 
     /**
@@ -71,5 +74,33 @@ public class MergeSort {
             j++;
             k++;
         }
+    }
+
+
+    public int[] getArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(size);
+        }
+        printArray(array);
+        return array;
+    }
+
+    public void printArray(int array[]) {
+        for (int e : array) {
+            System.out.print(e + ",");
+        }
+        System.out.println("");
+        System.out.println("=============");
+    }
+
+    public static void main(String... args) {
+
+        MergeSort mergeSort = new MergeSort();
+        int array2[] = mergeSort.getArray(10);
+        mergeSort.mergeSort(array2, 0, array2.length - 1);
+        System.out.println("Merge sort output: ");
+        mergeSort.printArray(array2);
     }
 }
