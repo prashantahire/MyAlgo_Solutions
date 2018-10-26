@@ -6,6 +6,30 @@ package my.algo.solution;
 public class HeapSort {
 
     /**
+     * Heap sort by using HEAP data structure and implementing max_heapify function.
+     * 
+     * @param array
+     */
+    public void heapSort(int array[]) {
+        int heapsize = array.length - 1;
+        while (heapsize >= 0) {
+
+            // get max heapify
+            buildMaxHeapify(array, heapsize);
+
+            // swap max root node which is max and last node
+            int temp = array[0];
+            array[0] = array[heapsize];
+            array[heapsize] = temp;
+
+            // decrease heap size
+            heapsize--;
+        }
+        System.out.println("Heap Sorted array :");
+        printArray(array);
+    }
+
+    /**
      * This method build array to max heapify array. Definition max_heapfy : The key of a node is ≥ than the keys of its
      * children.
      * 
