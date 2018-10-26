@@ -3,11 +3,16 @@
 package my.algo.solution;
 
 
+import java.util.Random;
+
+
 public class HeapSort {
 
     /**
      * Heap sort by using HEAP data structure and implementing max_heapify function.
      * 
+     * T(n) = O(n*logn)
+     *
      * @param array
      */
     public void heapSort(int array[]) {
@@ -66,4 +71,30 @@ public class HeapSort {
             maxHeapify(array, largestKeyIndex, heapsize);
         }
     }
+
+    public int[] getArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(size);
+        }
+        printArray(array);
+        return array;
+    }
+
+    public void printArray(int array[]) {
+        for (int e : array) {
+            System.out.print(e + ",");
+        }
+        System.out.println("");
+        System.out.println("=============");
+    }
+
+    public static void main(String... args) {
+
+        HeapSort sort = new HeapSort();
+        int array[] = sort.getArray(10);
+        sort.heapSort(array);
+    }
+
 }
