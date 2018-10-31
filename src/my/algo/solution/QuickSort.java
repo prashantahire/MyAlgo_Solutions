@@ -3,8 +3,11 @@
 package my.algo.solution;
 
 
+import java.util.Random;
+
+
 public class QuickSort {
-    
+
     /**
      * Uses partitioning to sort.... Best case T(n) = O(nlogn) Worst case T(n) = O(n^2)
      * 
@@ -19,7 +22,7 @@ public class QuickSort {
             quickSort(array, partitionPosition + 1, high);
         }
     }
-    
+
     /**
      * This method consider mid of the array as PIVOT and returns the partitioning position for the selected pivot. T(n)
      * = O(n) Partition Rule: Left elements <= Pivot and right elements > Pivot
@@ -57,13 +60,31 @@ public class QuickSort {
         array[jHigh] = temp;
         return jHigh;
     }
-    
-        public static void main(String... args) {
+
+    public int[] getArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(size);
+        }
+        printArray(array);
+        return array;
+    }
+
+    public void printArray(int array[]) {
+        for (int e : array) {
+            System.out.print(e + ",");
+        }
+        System.out.println("");
+        System.out.println("=============");
+    }
+
+    public static void main(String... args) {
 
         QuickSort sort = new QuickSort();
         int array[] = sort.getArray(10);
-        sort.mergeSort(array, 0, array.length - 1);
+        sort.quickSort(array, 0, array.length - 1);
         System.out.println("Quick sort output: ");
         sort.printArray(array);
-    } 
+    }
 }
