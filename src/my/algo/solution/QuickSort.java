@@ -57,4 +57,13 @@ public class QuickSort {
         array[jHigh] = temp;
         return jHigh;
     }
+    
+        public static void main(String... args) {
+
+        QuickSort sort = new QuickSort();
+        int array[] = sort.getArray(10);
+        sort.mergeSort(array, 0, array.length - 1);
+        System.out.println("Quick sort output: ");
+        sort.printArray(array);
+    } 
 }
