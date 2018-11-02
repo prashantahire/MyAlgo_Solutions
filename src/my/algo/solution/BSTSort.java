@@ -1,10 +1,9 @@
-
-
 package my.algo.solution;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 public class BSTSort {
@@ -54,6 +53,23 @@ public class BSTSort {
         int array[] = getArray(10);
         new BSTSort().BSTSort(array);        
     }
+    public static int[] getArray(int size) {
+        Random random = new Random();
+        int[] array = new int[size];
+        for (int i = 0; i < size; i++) {
+            array[i] = random.nextInt(size);
+        }
+        printArray(array);
+        return array;
+    }
+
+    public static void printArray(int array[]) {
+        for (int e : array) {
+            System.out.print(e + ",");
+        }
+        System.out.println("");
+        System.out.println("=============");
+    }    
 }
 
 
@@ -66,4 +82,3 @@ class Node {
         this.key = key;
     }
 }
-
