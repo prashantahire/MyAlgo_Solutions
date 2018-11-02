@@ -49,6 +49,11 @@ public class BSTSort {
         }
         return node;
     }
+    
+    public static void main(String ...args) {
+        int array[] = getArray(10);
+        new BSTSort().BSTSort(array);        
+    }
 }
 
 
