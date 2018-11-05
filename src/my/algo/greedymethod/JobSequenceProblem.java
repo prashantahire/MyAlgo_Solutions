@@ -53,7 +53,18 @@ public class JobSequenceProblem {
         }
         return Arrays.asList(scheduledJobs);
     }
-
+    public static void main(String... args) {
+        List<Job> list = new ArrayList<>();
+        list.add(new Job(35, 3));
+        list.add(new Job(25, 4));
+        list.add(new Job(12, 1));
+        list.add(new Job(20, 2));
+        list.add(new Job(5, 2));
+        list.add(new Job(30, 4));
+        list.add(new Job(15, 3));
+        List<Job> scheduleJobs = new JobSequenceProblem().scheduledJobsForMaxProfit(list);
+        System.out.println("Done..! Max profit: " + scheduleJobs.stream().mapToInt(job -> job != null ? job.profit : 0).sum());
+    }
 }
 
 
