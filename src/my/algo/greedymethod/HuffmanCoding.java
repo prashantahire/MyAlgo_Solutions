@@ -12,14 +12,6 @@ import java.util.Set;
 
 public class HuffmanCoding {
     
-    public static void main(String ...args) {
-        
-        String input = "B C C C A B B B A D D D D D";
-        HuffmanCoding hf = new HuffmanCoding();
-        HNode root = hf.createHuffmanTree(input);
-        hf.printHuffmanCode(root, "");
-    }
-
     public HNode createHuffmanTree(String input) {
 
         Map<String, Integer> wordCount = getFrequencyCount(input);
@@ -91,12 +83,13 @@ public class HuffmanCoding {
         }
         return wordCount;
     }
+    public static void main(String ...args) {
+        
+        String input = "B C C C A B B B A D D D D D";
+        HuffmanCoding hf = new HuffmanCoding();
+        HNode root = hf.createHuffmanTree(input);
+        hf.printHuffmanCode(root, "");
+    }
 }
 
 
-class HNode {
-    String value;
-    int count;
-    HNode left;
-    HNode right;
-}
