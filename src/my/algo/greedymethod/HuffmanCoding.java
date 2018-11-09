@@ -92,4 +92,9 @@ public class HuffmanCoding {
     }
 }
 
-
+class HNode {
+    String value;
+    int count;
+    HNode left;
+    HNode right;
+}
