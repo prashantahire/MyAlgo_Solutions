@@ -67,11 +67,10 @@ public class KnapsackProblem {
 }
 
 
-class KnapSackItem {
+class KnapSackItem{
     int weight;
     int profit;
     double profitperwt;
-
     public KnapSackItem(int weight, int profit) {
         this.weight = weight;
         this.profit = profit;
