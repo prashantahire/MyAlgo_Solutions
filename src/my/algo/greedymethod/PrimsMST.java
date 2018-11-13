@@ -1,7 +1,6 @@
 package my.algo.greedymethod;
 
 
-//Ref: https://algorithms.tutorialhorizon.com/prims-minimum-spanning-tree-mst-using-adjacency-matrix/
 public class PrimsMST {
     
     public static void main(String ...args) {
