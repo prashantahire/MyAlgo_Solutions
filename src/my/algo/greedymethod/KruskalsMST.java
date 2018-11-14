@@ -81,8 +81,6 @@ public class KruskalsMST {
         parent[ysetParent] = xsetParent;
     }
 }
-
-
 class AGraph {
 
     int vertices;
@@ -91,7 +89,6 @@ class AGraph {
     AGraph(int vertices) {
         this.vertices = vertices;
     }
-
     public void addEdge(int source, int destination, int weight) {
         edges.add(new Edge(source, destination, weight));
     }
