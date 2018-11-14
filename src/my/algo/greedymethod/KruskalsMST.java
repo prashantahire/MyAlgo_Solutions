@@ -12,6 +12,7 @@ public class KruskalsMST {
 
     public static void main(String[] args) {
         int vertices = 6;
+        //Graph using adjacency list
         AGraph graph = new AGraph(vertices);
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 2, 3);
@@ -93,8 +94,6 @@ class AGraph {
         edges.add(new Edge(source, destination, weight));
     }
 }
-
-
 class Edge {
     int source;
     int destination;
