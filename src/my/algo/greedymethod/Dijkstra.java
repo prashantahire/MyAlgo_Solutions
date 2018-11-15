@@ -27,5 +27,13 @@ class WGraph {
     }
 }
 
+class WNode {
+    int value;
+    int weight;
+
+    public WNode(int val, int wt) {
+        this.value = val;
+        this.weight = wt;
+    }
 
 }
