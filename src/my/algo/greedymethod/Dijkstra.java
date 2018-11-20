@@ -1,3 +1,5 @@
+
+
 package my.algo.greedymethod;
 
 
@@ -8,6 +10,7 @@ import java.util.List;
 //Works with directed/non-directed non negative graph.
 //Time complexity with array O(V^2 +E )... With PQ (V*logV+E*logV)
 public class Dijkstra {
+
     public void dijkstra(WGraph graph) {
 
         List<Integer> shortestPathSet = new ArrayList<>();
@@ -46,7 +49,8 @@ public class Dijkstra {
         for(int i=0; i<graph.vertices; i++) {
             System.out.println(" " + i + " -> " + predecessor[i] );
         }
-    }    
+    }
+
     private int extractMinNode(int[] distance, boolean[] visited) {
         int min = Integer.MAX_VALUE;
         int minNode = -1;
@@ -58,7 +62,24 @@ public class Dijkstra {
         }
         return minNode;
     }
+    
+    public static void main(String ...args) {
+        
+        WGraph graph = new WGraph(5);
+        graph.addEdge(0, 1, 10);
+        graph.addEdge(0, 2, 3);
+        graph.addEdge(1, 2, 1);
+        graph.addEdge(2, 1, 4);
+        graph.addEdge(1, 3, 2);
+        graph.addEdge(2, 3, 8);
+        graph.addEdge(2, 4, 2);
+        graph.addEdge(4, 3, 9);
+        graph.addEdge(3, 4, 7);
+        new Dijkstra().dijkstra(graph);
+    }
 }
+
+
 class WGraph {
     int vertices;
     List<WNode>[] adj;
