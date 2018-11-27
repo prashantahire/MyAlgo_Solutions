@@ -6,7 +6,6 @@ package my.algo.graph;
 import java.util.LinkedList;
 import java.util.List;
 
-
 //Assumption: Graph nodes are int. Need to change datastructure based on type of node
 public class BFS {
 
@@ -34,9 +33,7 @@ class Graph {
         for (int i = 0; i < v; i++) {
             adj[i] = new LinkedList<>();
         }
-
     }
-
     void addEdge(int u, int v) {
         adj[u].add(v);
     }
