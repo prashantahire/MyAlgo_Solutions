@@ -53,7 +53,6 @@ public class BellmanFord {
         }
     }
     
-    
     public static void main(String ...args) {
         
         WGraph graph = new WGraph(5);
@@ -66,7 +65,8 @@ public class BellmanFord {
         graph.addEdge(2, 4, 2);
         graph.addEdge(4, 3, 9);
         graph.addEdge(3, 4, 7);
-        new BellmanFord().bellmanFordShortestPath(graph);        
+        new BellmanFord().bellmanFordShortestPath(graph);   
+        
         WGraph graph1 = new WGraph(6);
         graph1.addEdge(0, 1, -1);
         graph1.addEdge(0, 2, 4);
