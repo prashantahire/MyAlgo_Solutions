@@ -62,8 +62,6 @@ public class BFS {
         for (int i = 0; i < parent.length; i++) {
             System.out.println("Node :" + i + " " + " Parent node: " + parent[i]);
         }
-    
- 
     }
 }
 
