@@ -5,6 +5,18 @@ import java.util.Stack;
 
 //Assumption: Graph nodes are int. Need to change data-structure based on type of node
 public class DFS {
+    
+        private void dfsVisit(int node, int parent[], Graph graph) {        
+        for(int v : graph.adj[node]) {
+            if(parent[v] == -1) {
+                parent[v] = node;
+                System.out.println("Visit Start: "+v);
+                dfsVisit(v, parent, graph);
+                //System.out.println("Visit Complete "+v);
+            }
+        }
+    }
+    
     public void dfsStack(Graph graph) {
         
         Stack<Integer> dfsStack = new Stack<>();
