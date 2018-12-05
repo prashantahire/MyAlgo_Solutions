@@ -1,4 +1,5 @@
 
+
 package my.algo.graph;
 
 import java.util.Stack;
@@ -6,7 +7,25 @@ import java.util.Stack;
 //Assumption: Graph nodes are int. Need to change data-structure based on type of node
 public class DFS {
     
-        private void dfsVisit(int node, int parent[], Graph graph) {        
+    //This is solved using recursion. Can be solved using stack if don't want to use recursion
+    //Time complexity O(V+E)
+    public void dfsTraversal(Graph graph) {
+        int parent[] = new int[graph.vertices];
+        for(int i=0;i<graph.vertices;i++) {
+            parent[i] = -1;
+        }
+        
+        for(int vertex=0; vertex<graph.vertices; vertex++) {
+            if(parent[vertex] ==-1) {
+                parent[vertex] = vertex;
+                System.out.println("Visited : "+vertex);
+                dfsVisit(vertex, parent, graph);
+               // System.out.println("Visit complete : "+vertex);
+            }
+        }
+    }
+
+    private void dfsVisit(int node, int parent[], Graph graph) {        
         for(int v : graph.adj[node]) {
             if(parent[v] == -1) {
                 parent[v] = node;
@@ -38,5 +57,40 @@ public class DFS {
                 }
             }            
         }
+    }
+    public static void main(String... args) {
+        Graph graph = new Graph(6);
+        graph.addEdge(0, 1);
+        graph.addEdge(0, 3);
+        graph.addEdge(1, 0);
+        graph.addEdge(1, 3);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 1);
+        graph.addEdge(2, 4);
+        graph.addEdge(2, 5);
+        graph.addEdge(3, 0);
+        graph.addEdge(3, 1);
+        graph.addEdge(3, 4);
+        graph.addEdge(4, 2);
+        graph.addEdge(4, 3);
+        graph.addEdge(5, 2);
+        graph.addEdge(5, 3);
+
+        Graph graph2 = new Graph(8);
+        graph2.addEdge(0, 1);
+        graph2.addEdge(0, 4);
+        graph2.addEdge(1, 2);
+        graph2.addEdge(2, 7);
+        graph2.addEdge(3, 4);
+        graph2.addEdge(4, 3);
+        graph2.addEdge(5, 1);
+        graph2.addEdge(5, 6);
+        graph2.addEdge(6, 2);
+
+        new DFS().dfsTraversal(graph);
+        System.out.println("==============");
+        new DFS().dfsTraversal(graph2);
+        new DFS().dfsStack(graph2);
+
     }
 }
