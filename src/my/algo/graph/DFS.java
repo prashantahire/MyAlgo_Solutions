@@ -42,7 +42,6 @@ public class DFS {
         int visited[] = new int[graph.vertices];
         //push start vertex
         
-        
         for(int i=0; i<graph.vertices; i++) {
             if(visited[i] != 1)
                    dfsStack.push(i);
@@ -86,7 +85,6 @@ public class DFS {
         graph2.addEdge(5, 1);
         graph2.addEdge(5, 6);
         graph2.addEdge(6, 2);
-
         new DFS().dfsTraversal(graph);
         System.out.println("==============");
         new DFS().dfsTraversal(graph2);
