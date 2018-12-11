@@ -41,13 +41,12 @@ public class KnapSackProblem {
         }
         return profitTable[weight.length-1][wtMaxcapacity];
         
-    }
-    
+    }    
     public static void main(String ...args) {
         
         int p[]= {0,1,2,5,6};
         int w[]= {0,2,3,4,5};
         
-        System.out.println("Maximum profit for 0/1 knapsack by DP :"+getMaximumProfit(w, p, 8));
+        System.out.println("Maximum profit for 0/1 knapsack by Dynamic Programming :"+getMaximumProfit(w, p, 8));
     }
 }
