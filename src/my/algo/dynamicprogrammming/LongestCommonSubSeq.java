@@ -33,8 +33,7 @@ public class LongestCommonSubSeq {
             System.out.println();                
         }
         return lcs[s1.length()][s2.length()];
-    }
-    
+    }    
     public static void main(String ...args) {
         System.out.println("     "+getLongestCommonSubSequenceInStrings("stone", "longest"));
     }
