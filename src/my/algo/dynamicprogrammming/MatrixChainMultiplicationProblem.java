@@ -31,8 +31,7 @@ public class MatrixChainMultiplicationProblem {
         }
         System.out.println();
         return mincost[1][n-1];
-    }
-    
+    }    
     public static void main(String ...args) {
         int a[] = {5,4,6,2,7};
         System.out.println(" Minimum cost of multiplication : "+getMinimumCostOfMultiplication(a, 5));
