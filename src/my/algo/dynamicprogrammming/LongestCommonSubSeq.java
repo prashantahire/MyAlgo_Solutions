@@ -1,4 +1,4 @@
-package my.algo.dynamic.programming;
+package my.algo.dynamicprogrammming;
 
 public class LongestCommonSubSeq {
     
