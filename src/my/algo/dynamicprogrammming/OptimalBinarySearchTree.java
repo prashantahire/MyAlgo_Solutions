@@ -1,5 +1,5 @@
 
-package my.algo.dynamic.programming;
+package my.algo.dynamicprogramming;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
