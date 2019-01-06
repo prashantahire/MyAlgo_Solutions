@@ -1,8 +1,4 @@
-
-
 package my.algo.backtracking;
-
-
 public class GraphColoringProblem {
 
     private static boolean isBoundingConditionSatisfied(int graph[][], int[] colors, int v, int clr) {
