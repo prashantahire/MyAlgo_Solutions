@@ -23,5 +23,21 @@ public class GraphColoringProblem {
         }
         return false;
     }
-  
+      public static void  graphColoring(int graph[][], int numberOfColors) {
+        int colors[] = new int[graph.length];
+        System.out.println(graphColoringRec(graph, numberOfColors, colors, 0));
+        for(int i=0; i<graph.length; i++) {
+            System.out.print("   "+colors[i]);
+        }
+
+    }
+
+    public static void main(String ...args) {
+        int graph[][] = {{0, 1, 1, 1}, 
+                {1, 0, 1, 0}, 
+                {1, 1, 0, 1}, 
+                {1, 0, 1, 0}};
+        graphColoring(graph, 3);
+
+    }  
 }
