@@ -9,11 +9,9 @@ public class GraphColoringProblem {
     }
 
     private static boolean graphColoringRec(int graph[][], int numberOfColors, int[] colors, int v) {
-
         if (v == graph.length)
             return true;
         for (int c = 1; c <= numberOfColors; c++) {
-
             if (isBoundingConditionSatisfied(graph, colors, v, c)) {
                 colors[v] = c;
 
@@ -23,7 +21,7 @@ public class GraphColoringProblem {
                 colors[v] = 0;
             }
         }
-
         return false;
     }
+  
 }
