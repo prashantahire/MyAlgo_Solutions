@@ -1,8 +1,5 @@
 
-
 package my.algo.backtracking;
-
-
 public class HamiltonianCycle {
 
     private static boolean isBoundingConditionSatisfied(int graph[][], int path[], int vidx, int v) {
@@ -55,8 +52,7 @@ public class HamiltonianCycle {
         System.out.println("Solution....");
         for (int i = 0; i < arr.length; i++)
             System.out.print("    " + arr[i]);
-    }
-    
+    }    
     public static void main(String ...args) {
         
         int graph[][] = {{0, 1, 0, 1, 0}, 
