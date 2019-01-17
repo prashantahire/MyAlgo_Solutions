@@ -1,13 +1,8 @@
-
-
 package my.algo.backtracking;
-
-
 public class NQueensProblem {
     
     //Bounding condition check for back tracking
     private static boolean isBoundingConditionSatisfied(int board[][], int row, int col) {
-
         // row check
         for (int i = 0; i < col; i++)
             if (board[row][i] == 1)
@@ -63,4 +58,3 @@ public class NQueensProblem {
         System.out.println(solveNQUtil(board, 0));
     }
 }
-
