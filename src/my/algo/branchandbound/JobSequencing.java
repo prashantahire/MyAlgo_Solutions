@@ -35,5 +35,15 @@ public class JobSequencing {
         } while (!queue.isEmpty());
         System.out.println(maxPenalty);
     }
+    
+        private static int getcost(int penalty[], int node, int level, int cost[][]) {
+        int sum = 0;
+        for (int i = 0; i < node; i++)
+            sum += penalty[i];
+        for (int i = 0; i < level; i++)
+            for (int j = 0; j < node; j++)
+                sum = sum - cost[i][j];
+        return sum;
+    }
 }
 
