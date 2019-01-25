@@ -44,5 +44,15 @@ public class JobSequencing {
                 sum = sum - cost[i][j];
         return sum;
     }
+        private static int getpenalty(int penalty[], int node, int level, int ps[][]) {
+        int sum = 0;
+        for (int i = 0; i < penalty.length; i++)
+            if (node != i)
+                sum += penalty[i];
+        for (int i = 0; i < level; i++)
+            for (int j = 0; j < node - 1; j++)
+                sum = sum - ps[i][j];
+        return sum;
+    }
 }
 
