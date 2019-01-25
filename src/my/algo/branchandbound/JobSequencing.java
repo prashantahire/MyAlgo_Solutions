@@ -54,5 +54,13 @@ public class JobSequencing {
                 sum = sum - ps[i][j];
         return sum;
     }
+    
+        public static void main(String ...args) {
+        
+        int p[]= {5,10,6,3};
+        int  d[] = {1,3,2,1};
+        int time[] = {1,2,1,1};
+        solve(time, p, d, 4);
+    }
 }
 
